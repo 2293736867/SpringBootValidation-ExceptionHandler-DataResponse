@@ -13,6 +13,7 @@ public class User {
     @Length(min = 11,max = 11,message = "电话号码必须11位",groups = {Second.class})
     private String phone;
     @NotEmpty(message = "密码不能为空",groups = {First.class})
+    @Length(min = 6,max = 20,message = "密码长度需要为6-20位",groups = {Second.class})
     private String password;
     @NotEmpty(message = "邮箱不能为空",groups = {First.class})
     @Email(message = "邮箱格式不正确",groups = {Second.class})
