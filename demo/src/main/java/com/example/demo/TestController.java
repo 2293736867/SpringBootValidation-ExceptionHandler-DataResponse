@@ -34,6 +34,7 @@ public class TestController {
             for(ObjectError error:bindingResult.getAllErrors())
                 return error.getCode();
         }
+
         return service.test(user);
     }
 }
