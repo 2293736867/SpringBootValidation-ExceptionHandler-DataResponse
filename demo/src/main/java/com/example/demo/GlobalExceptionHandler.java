@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e)
+    public Result<String> methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e)
     {
         ObjectError error = e.getBindingResult().getAllErrors().get(0);
-        return error.getDefaultMessage();
+        return new Result<>(error.getCode(),"参数校验失败",error.getDefaultMessage());
     }
 
     @ExceptionHandler(TestException.class)
-    public String testExceptionHandler(TestException e)
+    public Result<String> testExceptionHandler(TestException e)
     {
-        return e.getMsg();
+        return new Result<>(e.getCode(),"失败",e.getMsg());
     }
 }

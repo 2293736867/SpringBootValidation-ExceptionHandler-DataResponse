@@ -18,7 +18,6 @@ public class TestController {
     @PostMapping("test")
     public String test(@RequestBody @Validated({User.Group.class}) User user)
     {
-        throw new TestException("出现异常");
-//        return service.test(user);
+        return service.test(user);
     }
 }

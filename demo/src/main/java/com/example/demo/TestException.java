@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class TestException extends RuntimeException{
-    private int code;
+    private String code;
     private String msg;
 
-    public TestException(int code,String msg)
+    public TestException(String code,String msg)
     {
         super(msg);
         this.code = code;
@@ -16,12 +16,12 @@ public class TestException extends RuntimeException{
 
     public TestException()
     {
-        this(111,"测试异常");
+        this("111","测试异常");
     }
 
     public TestException(String msg)
     {
-        this(111,msg);
+        this("111",msg);
     }
 
 }
