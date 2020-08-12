@@ -28,7 +28,7 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {
-        return !methodParameter.getParameterType().equals(Result.class);
+        return !(methodParameter.getParameterType().equals(Result.class) || methodParameter.hasMethodAnnotation(NotResponseBody.class));
     }
 
     @Override

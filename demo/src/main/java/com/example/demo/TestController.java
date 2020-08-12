@@ -16,6 +16,7 @@ public class TestController {
     private final TestService service;
 
     @PostMapping("test")
+    @NotResponseBody
     public User test(@RequestBody @Validated({User.Group.class}) User user)
     {
         return service.test(user);
