@@ -12,9 +12,9 @@ import javax.validation.Valid;
 
 @Service
 public class TestService {
-    public Result<User> test(User user)
+    public User test(User user)
     {
 //        持久化操作
-        return new Result<>(ResultCode.SUCCESS,user);
+        return user;
     }
 }

@@ -15,4 +15,11 @@ public class Result<T> {
         message = resultCode.getMessage();
         this.data = data;
     }
+
+    public Result(T data)
+    {
+        code = ResultCode.SUCCESS.getCode();
+        message = ResultCode.SUCCESS.getMessage();
+        this.data = data;
+    }
 }
