@@ -18,7 +18,7 @@ import java.util.Set;
 public class TestController {
     private final TestService service;
     @PostMapping("test")
-    public String test(@RequestBody @Validated({User.GroupB.class}) User user, BindingResult bindingResult)
+    public String test(@RequestBody @Validated({User.Group.class}) User user, BindingResult bindingResult)
     {
         if(bindingResult.hasErrors())
         {
