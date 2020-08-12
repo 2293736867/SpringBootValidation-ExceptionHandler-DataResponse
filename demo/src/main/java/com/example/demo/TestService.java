@@ -15,6 +15,6 @@ public class TestService {
     public Result<User> test(User user)
     {
 //        持久化操作
-        return new Result<>("111","success",user);
+        return new Result<>(ResultCode.SUCCESS,user);
     }
 }

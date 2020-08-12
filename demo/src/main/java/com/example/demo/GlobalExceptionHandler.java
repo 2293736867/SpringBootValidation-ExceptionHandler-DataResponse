@@ -11,12 +11,12 @@ public class GlobalExceptionHandler {
     public Result<String> methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e)
     {
         ObjectError error = e.getBindingResult().getAllErrors().get(0);
-        return new Result<>(error.getCode(),"参数校验失败",error.getDefaultMessage());
+        return new Result<>(ResultCode.FAILED,error.getDefaultMessage());
     }
 
     @ExceptionHandler(TestException.class)
     public Result<String> testExceptionHandler(TestException e)
     {
-        return new Result<>(e.getCode(),"失败",e.getMsg());
+        return new Result<>(ResultCode.FAILED,e.getMsg());
     }
 }
